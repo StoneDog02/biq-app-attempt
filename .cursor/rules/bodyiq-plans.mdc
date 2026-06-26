@@ -1,0 +1,27 @@
+---
+description: Keep repo plan docs in sync with Cursor plans
+globs: docs/plans/**
+alwaysApply: true
+---
+
+# BODYiQ Plan Sync Workflow
+
+## Repo location
+Full build plans live in `docs/plans/` (git-tracked). Master plan: `docs/plans/bodyiq-mobile-app.md`. Active sprint: latest phase file (e.g. `phase-3-fitness.md`).
+
+## Dual-write on plan creation (Option B)
+When **creating or materially updating** a phase plan in Cursor Plan mode, do both in the **same turn** — do not defer the repo copy to implementation:
+
+1. Cursor plan in `~/.cursor/plans/` (IDE)
+2. **Immediately** mirror to `docs/plans/<readable-name>.md` (no UUID in filename; keep YAML frontmatter + todos)
+3. Update `docs/plans/README.md` index and active sprint link
+4. Update `bodyiq-roadmap.mdc` if phase scope changed
+5. Append a Journal entry to **today's** file (`Journal/YYYY/MM-DD-YYYY.md`) — run the date check in `bodyiq-journal.mdc` first; do not write to yesterday's file unless the user requests backfill
+
+CreatePlan alone does not write to the repo. The agent must write `docs/plans/` in the same response as the plan proposal.
+
+## Material updates
+If the Cursor plan changes later, update the matching `docs/plans/` file in the same session.
+
+## Phase complete
+Mark status in plan frontmatter or README index; log completion in Journal.

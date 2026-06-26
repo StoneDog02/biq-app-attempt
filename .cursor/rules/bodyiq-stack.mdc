@@ -1,0 +1,31 @@
+---
+description: BODYiQ tech stack, architecture, and design tokens
+alwaysApply: true
+---
+
+# BODYiQ Stack
+
+## Mobile
+- Expo SDK 52+ / React Native / TypeScript
+- Expo Router (file-based navigation)
+- NativeWind v4 + design tokens
+- TanStack Query (server state), Zustand (client state)
+- React Hook Form + Zod (forms/intake)
+
+## Backend (hybrid)
+- **Supabase** — auth, Postgres, RLS, storage, Edge Functions
+- **Later:** Shopify Storefront API, CareValidate via Edge Function proxies (keys never in app)
+
+## Design tokens
+- Black: `#0A0A0A`, White: `#FFFFFF`, Copper base: `#C37663`
+- Copper light: `#D4957F`, dark: `#A85F4D`
+- Surfaces: black/near-black; CTAs: copper gradient
+
+## Core tables
+`profiles`, `intake_responses`, `daily_plans`, `habit_logs`, `reminder_settings`
+
+## Env vars
+`EXPO_PUBLIC_SUPABASE_URL`, `EXPO_PUBLIC_SUPABASE_ANON_KEY` — secrets only in Edge Functions.
+
+## Bundle ID
+`com.bodyiq.app` (confirm with branding before App Store)

@@ -1,0 +1,25 @@
+---
+description: BODYiQ product principles and positioning
+alwaysApply: true
+---
+
+# BODYiQ Product Principles
+
+## Guiding principle
+Be the "truth and light." Only recommend what a user genuinely needs — no upselling for upselling's sake.
+
+## Strategic context
+Wellness app for payors (UHC, BCBS) to keep beneficiaries out of hospitals and support healthy aging in place.
+
+## Core principles
+- **Simplicity first** — dumb simple by default; complexity is opt-in
+- **Tiered effort** — user picks engagement level at signup (light / moderate / high-touch)
+- **No notification fatigue** — reminder frequency is user-controlled
+- **Voice everywhere** — voice input throughout (Phase 2+ wiring)
+- **Bilingual** — English at launch; Spanish in a later phase
+
+## Mobile-first
+This repo is the **mobile app** (Expo/React Native), not the marketing website.
+
+## Commerce ethics
+Integrate BODYiQ products along user paths only when relevant to their plan. Never dark-pattern or pressure purchases.

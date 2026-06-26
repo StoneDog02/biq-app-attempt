@@ -1,0 +1,34 @@
+---
+description: Expo mobile conventions for BODYiQ app
+globs: app/**,src/**
+alwaysApply: false
+---
+
+# BODYiQ Mobile Conventions
+
+## Structure
+- `app/` — Expo Router screens: `(auth)/`, `(onboarding)/`, `(tabs)/`
+- `src/components/` — UI primitives + features
+- `src/theme/` — tokens; `src/lib/` — supabase, query client
+- `src/hooks/`, `src/services/`, `src/types/`
+
+## Styling
+Use NativeWind + tokens from `src/theme/tokens.ts`. Default to dark surfaces, white text, copper accents.
+
+## Patterns
+- Functional components; extract hooks for data fetching
+- TanStack Query for Supabase reads/writes; Zustand for onboarding wizard state
+- Zod schemas colocated in `src/types/`
+- Simplicity default: simplest UX path is always the default
+
+## Auth flow
+Unauthenticated → `(auth)/`; post-login without intake → `(onboarding)/`; complete → `(tabs)/`.
+
+## Examples
+```tsx
+// ✅ Use Screen wrapper + theme tokens
+<Screen><Button variant="primary">Continue</Button></Screen>
+
+// ❌ Hardcode colors
+<View style={{ backgroundColor: '#C37663' }} />
+```

@@ -1,0 +1,40 @@
+---
+description: Journal workflow for documenting daily work
+alwaysApply: true
+---
+
+# BODYiQ Journal Workflow
+
+## Structure
+- `Journal/YYYY/MM-DD-YYYY.md` — one file per day
+- Title: `# MM/DD/YYYY` (display format)
+- Work chunks: `## Phase X — Description` headings
+
+## Session-start date check (required)
+
+Before logging any Journal work in a session:
+
+1. Read **today's date** from user context (`Today's date` in the message), not file mtimes
+2. Compute path: `Journal/YYYY/MM-DD-YYYY.md` (e.g. `Journal/2026/06-25-2026.md`)
+3. If the file is missing, create it with only the `# MM/DD/YYYY` header — do not overwrite existing files
+4. Append all Journal entries for the current session to **today's file only**
+5. Never append new work to yesterday's file unless the user explicitly requests backfill
+
+A `sessionStart` hook (`.cursor/hooks/ensure-journal-today.sh`) also creates today's file automatically; the agent must still verify the correct file before writing.
+
+## Rules
+- **Append** new sections when resuming same-day work; never overwrite prior entries
+- **New day** = new file under current year folder
+- After each meaningful work chunk, log: what was done, files touched, blockers
+- Tag sections with phase name when applicable
+- Reference the relevant plan in `docs/plans/` when logging phase work
+
+## Template
+```markdown
+# MM/DD/YYYY
+
+## Phase X — Chunk title
+- What was done
+- Files touched
+- Notes / blockers
+```

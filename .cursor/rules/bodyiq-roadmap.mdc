@@ -1,0 +1,46 @@
+---
+description: BODYiQ app phase roadmap and current MVP scope
+alwaysApply: true
+---
+
+# BODYiQ Roadmap
+
+## Phase 0 — Foundation
+Expo + TypeScript + Expo Router + NativeWind, BODYiQ theme, Supabase auth, tab shell (Today, Habits, Profile).
+
+## Phase 1 — MVP (complete)
+Onboarding/intake (15+ min), engagement tiers, reminder presets, Today's Plan dashboard, basic habit tracking (water, steps, stretching), push notifications.
+
+## Phase 2 — Nutrition (complete — base layout)
+Tiered food tracking (Levels 1–5), barcode/photo logging, meal planning, voice logging. See `docs/plans/phase-2-nutrition.md`.
+
+## Phase 3 — Fitness (complete — base layout)
+Workout programs, exercise library, recovery shell, workout logging. See `docs/plans/phase-3-fitness.md`.
+
+## Phase 4 — Commerce & Telehealth (complete — base layout)
+Care hub (Profile), supplement logging, shop catalog shell, patient portal, telehealth, Longevity Report lab uploads. See `docs/plans/phase-4-care.md`.
+
+## Cross-cutting — Today's Plan loop (complete)
+
+Daily plan auto-refresh, dynamic coach copy, segmented layout, section action links, day progress, status badges. See `docs/plans/phase-today-plan-loop.md`.
+
+## Cross-cutting — Habits tab polish (complete)
+
+Pinned header, day progress bar, grouped checklist, pull-to-refresh, compact weekly history. See `docs/plans/phase-habits-polish.md`.
+
+## Cross-cutting — Nutrition tab polish (complete)
+
+Pinned header, day progress, grouped check-in panel (L1), compact meal log + list (L2+), optimistic updates. See `docs/plans/phase-nutrition-polish.md`.
+
+## Cross-cutting — Nutrition plan builder (complete)
+
+Expanded intake (weight, macro foods, meals/day), macro calculator, meal planner v2, Nutrition Setup mini-flow, today's plan on Nutrition tab. See `docs/plans/phase-nutrition-plan-builder.md`.
+
+## Phase 5 — AI & Scale
+Nutrition AI, premium AI trainer, body scan integrations, MyFitnessPal import, calendar sync, BiQ community, Spanish, payor enrollment.
+
+## NOT in Phase 1
+Store, telehealth, food photo/barcode, body scan, AI, community, Spanish, MyFitnessPal, calendar sync.
+
+## Plan sync
+Full plans: `docs/plans/`. When scope changes, update this file, mirror the plan in `docs/plans/`, and add a Journal entry.
